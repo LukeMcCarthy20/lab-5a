@@ -57,11 +57,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
   let firstElement = sum(a, sum(b, c)[0])[0];
-  console.log(firstElement);
+  console.log('call back (+):', firstElement);
   let secondElement = multiply(a, multiply(b, c)[0])[0];
+  console.log('call back (*):', secondElement);
+  // let thirdElement = '4 and 7 and 5 sum to 16.';
   let thirdElement = `${a} and ${b} and ${c} sum to ${firstElement}.`;
-  let fourthElement = `The product of ${a} and ${b} and ${c} is ${secondElement}.`;
 
+  // let fourthElement = 'The product of 4 and 7 and 5 is 140.';
+  let fourthElement = `The product of ${a} and ${b} and ${c} is ${secondElement}.`;
   return [firstElement, secondElement, thirdElement, fourthElement];
 }
 
@@ -84,7 +87,13 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  console.log('our array to sum:', sumArr[1], sumArr[2]);
+  let firstElement = sum(sumArr[0], sum(sumArr[1], sumArr[2])[0])[0];
+  console.log('sum array:',firstElement);
+  //                  " 2,  3,  4 was passed in as an array of numbers, and 9 is their sum."
+  let secondElement =`${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${firstElement} is their sum.`;
 
+  return [firstElement, secondElement];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
